@@ -1,4 +1,4 @@
-2022-04-28 05:51:53,180 ERROR: Exception on /reset_password_request [GET] [in /home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
+2022-04-28 11:24:46,527 ERROR: Exception on / [GET] [in /home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
@@ -8,8 +8,10 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/routes.py", line 51, in reset_password_request
-    return render_template('reset_password_request.html',
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask_login/utils.py", line 277, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/routes.py", line 99, in index
+    return render_template('index.html', title='Home', form=form,
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
     return _render(
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
@@ -18,80 +20,24 @@ Traceback (most recent call last):
     self.environment.handle_exception()
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/reset_password_request.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/base.html", line 75, in template
-    {% block content %}
-jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
-2022-04-28 05:51:53,341 ERROR: Exception on /favicon.ico [GET] [in /home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1499, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1481, in raise_routing_exception
-    raise request.routing_exception  # type: ignore
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/ctx.py", line 397, in match_request
-    result = self.url_adapter.match(return_rule=True)  # type: ignore
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/werkzeug/routing.py", line 2049, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1384, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1324, in handle_http_exception
-    return self.ensure_sync(handler)(e)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/base.html", line 75, in template
-    {% block content %}
-jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
-2022-04-28 05:51:59,474 ERROR: Exception on /login [GET] [in /home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 2077, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1525, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/routes.py", line 119, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 1291, in render
-    self.environment.handle_exception()
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/login.html", line 1, in top-level template code
-    {% extends 'base.html' %}
-  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/environment.py", line 926, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/base.html", line 75, in template
-    {% block content %}
-jinja2.exceptions.TemplateAssertionError: block 'content' defined twice
-2022-04-28 05:53:22,883 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:50]
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block 'doc'
+    {%- block html %}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block 'html'
+    {% block body -%}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block 'body'
+    {% block content -%}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/base.html", line 48, in block 'content'
+    {% block app_content %}{% endblock %}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/index.html", line 11, in block 'app_content'
+    {% include '_post.html' %}
+  File "/home/lordrambock/Python_Projects/Flask/microblog/app/templates/_post.html", line 12, in top-level template code
+    said {{ moment(post.timestamp).fromNow() }}:
+  File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/utils.py", line 83, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'moment' is undefined
