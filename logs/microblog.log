@@ -41,3 +41,14 @@ Traceback (most recent call last):
   File "/home/lordrambock/Python_Projects/Flask/microblog/venv/lib/python3.9/site-packages/jinja2/utils.py", line 83, in from_obj
     if hasattr(obj, "jinja_pass_arg"):
 jinja2.exceptions.UndefinedError: 'moment' is undefined
+2022-04-28 19:20:16,013 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:22:33,958 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:23:44,783 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:26:09,520 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:27:36,563 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:29:48,301 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:30:30,919 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 19:31:11,934 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-28 23:16:02,553 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-29 00:28:09,201 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
+2022-04-29 00:36:14,588 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:49]
