@@ -30,3 +30,5 @@ Traceback (most recent call last):
     {% endfor %}
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
 2022-04-27 23:39:03,096 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:46]
+2022-04-30 11:42:33,679 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:52]
+2022-04-30 13:14:24,769 INFO: Microblog startup [in /home/lordrambock/Python_Projects/Flask/microblog/app/__init__.py:52]
