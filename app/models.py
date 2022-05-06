@@ -7,6 +7,9 @@ from hashlib import md5
 from time import time
 import jwt
 from app import app
+import json
+from time import time
+
 
 
 @login.user_loader
@@ -49,6 +52,8 @@ class User(UserMixin, db.Model):
                                     foreign_keys='Message.sender_id',
                                     backref='recipient', lazy='dynamic')
     last_message_read_time = db.Column(db.DateTime)
+    notifications = db.relationship('Notification', backref='user',
+                                    lazy='dynamic')
 
 
     def new_messages(self):
@@ -80,7 +85,16 @@ class User(UserMixin, db.Model):
         return followed.union(own).order_by(Post.timestamp.desc())
 
 
+class Notification(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128), index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    timestamp = db.Column(db.Float, index=True, default=time)
+    payload_json = db.Column(db.Text)
 
+    def get_data(self):
+        return json.loads(str(self.payload_json))
+    
     def set_password(self, password):
         self.password_hash = generate_password_hash(password)
 
@@ -123,3 +137,7 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
 
+
+
+
+    
